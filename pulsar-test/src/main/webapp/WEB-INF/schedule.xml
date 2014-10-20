@@ -4,4 +4,7 @@
 	<!--Execute a Java class every 10 minutes -->
 	<task type="Java" id="com.mobiarch.pulsar.test.TestTask"
 		frequency="10" />
+	<!-- Execute a stateless session bean every 1 minute -->
+	<task type="EJB" id="java:global/pulsar-test/SimpleEJB"
+		frequency="1" />
 </schedule>

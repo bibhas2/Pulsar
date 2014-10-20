@@ -5,7 +5,6 @@ import java.util.Timer;
 import java.util.logging.Logger;
 
 import javax.naming.InitialContext;
-import javax.rmi.PortableRemoteObject;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
@@ -122,11 +121,9 @@ public class Engine extends Timer implements ContentHandler {
 			Object obj = cls.newInstance();
 			item.setTask((Task) obj);
 		} else if (item.getType().equals("ejb")) {
-			logger.fine("Looking up EJB home: " + item.getId());
+			logger.info("Looking up EJB home: " + item.getId());
 			Object obj = this.ctx.lookup(item.getId());
-			EJBTaskHome th = (EJBTaskHome) PortableRemoteObject.narrow(obj,
-					EJBTaskHome.class);
-			item.setTask(th.create());
+			item.setTask((Task) obj);
 		} else {
 			throw new Exception("Unsupported task type: " + item.getType());
 		}
