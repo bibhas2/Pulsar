@@ -32,7 +32,7 @@ If you are not using Maven, then add the Pulsar JAR file to your WEB-INF/lib.
 
 Register the scheduler Servlet to load at startup in web.xml.
 
-```
+``` xml
 <servlet>
 	<servlet-name>SchedulerServlet</servlet-name>
 	<servlet-class>com.mobiarch.pulsar.SchedulerServlet</servlet-class>
@@ -59,7 +59,7 @@ The execute method gets called periodically on schedule.
 ##Defining the Task Schedule
 Create a file called **WEB-INF/schedule.xml**. Register the tasks there.
 
-```
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <schedule>
 	<!--Execute a Java class every 10 minutes -->
@@ -71,7 +71,7 @@ Create a file called **WEB-INF/schedule.xml**. Register the tasks there.
 ##Creating an EJB Task
 Create a stateless session bean that implements the ``com.mobiarch.pulsar.Task`` interface.
 
-```
+``` java
 @Stateless
 public class SimpleEJB implements Task {
 	private static final long serialVersionUID = -6110222237944363619L;
@@ -89,7 +89,7 @@ example, in TomEE, the JNDI name is ``java:global/<project name>/<EJB name>``. A
 our EJB was created in a web project called MyWeb, the schedule.xml file will look like
 this:
 
-```
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <schedule>
 	<!-- Execute a stateless session bean every 1 minute -->
