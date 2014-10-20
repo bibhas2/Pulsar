@@ -85,7 +85,7 @@ public class SimpleEJB implements Task {
 
 Register the EJB in **schedule.xml** using its JNDI name as the ID. There is no standard
 at this point for the JNDI name and it varies wildely based on the container. For
-example, in TomEE, the JNDI name is java:global/<project name>/<EJB name>. Assuming
+example, in TomEE, the JNDI name is ``java:global/<project name>/<EJB name>``. Assuming
 our EJB was created in a web project called MyWeb, the schedule.xml file will look like
 this:
 
