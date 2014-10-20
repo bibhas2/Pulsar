@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+
+	<!--Execute a Java class every 10 minutes -->
+	<task type="Java" id="com.mobiarch.pulsar.test.TestTask"
+		frequency="1" />
+</schedule>
