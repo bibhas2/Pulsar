@@ -20,7 +20,7 @@ The JAR file will be created in the target folder.
 ##Using Pulsar
 If your project uses Maven, then simply add the dependency:
 
-```
+``` xml
 <dependency>
 	<groupId>com.mobiarch</groupId>
 	<artifactId>pulsar</artifactId>
@@ -42,7 +42,7 @@ Register the scheduler Servlet to load at startup in web.xml.
 ##Creating a Task
 A POJO task class needs to implement the ``com.mobiarch.pulsar.Task`` interface.
 
-```
+``` java
 public class TestTask implements Task {
 	private static final long serialVersionUID = 8122298388820623514L;
 	Logger logger = Logger.getLogger(getClass().getName());
