@@ -3,5 +3,5 @@
 
 	<!--Execute a Java class every 10 minutes -->
 	<task type="Java" id="com.mobiarch.pulsar.test.TestTask"
-		frequency="1" />
+		frequency="10" />
 </schedule>
