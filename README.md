@@ -57,7 +57,7 @@ public class TestTask implements Task {
 The execute method gets called periodically on schedule.
 
 ##Defining the Task Schedule
-Create a file called **WEB-INF/schedule.xml**. Register the tasks there.
+Create a file called **WEB-INF/schedule.xml**. Register the tasks there. Specify the interval in minutes using the **frequency** attribute.
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -65,6 +65,18 @@ Create a file called **WEB-INF/schedule.xml**. Register the tasks there.
 	<!--Execute a Java class every 10 minutes -->
 	<task type="Java" id="com.mobiarch.pulsar.test.TestTask"
 		frequency="10" />
+</schedule>
+```
+
+You can run a task at a specific time of day. For example, the following will run the task every day at 3PM.
+
+``` xml
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+	<!--Execute a Java class once a day at 3PM -->
+	<task type="Java" id="com.mobiarch.pulsar.test.TestTask"
+	        start="15:00"
+		frequency="1440" />
 </schedule>
 ```
 
