@@ -1,4 +1,4 @@
-###Overview
+### Overview
 Pulsar is a job schduler for Java EE applications. It is kept simple and easy to adopt in
 an application. A task can be developed using one of:
 
@@ -6,7 +6,7 @@ an application. A task can be developed using one of:
 - An EJB, usually a statless session bean. Use this approach if you want transaction, 
 security and other services offered by the EJB container.
 
-##Building
+## Building
 Pulsar uses Maven as the build system. Run these commands to build Pulsar.
 
 ```
@@ -17,7 +17,7 @@ mvn clean install
 
 The JAR file will be created in the target folder.
 
-##Using Pulsar
+## Using Pulsar
 If your project uses Maven, then simply add the dependency:
 
 ``` xml
@@ -39,7 +39,7 @@ Register the scheduler Servlet to load at startup in web.xml.
 	<load-on-startup>1</load-on-startup>
 </servlet>
 ```
-##Creating a Task
+## Creating a Task
 A POJO task class needs to implement the ``com.mobiarch.pulsar.Task`` interface.
 
 ``` java
@@ -56,7 +56,7 @@ public class TestTask implements Task {
 
 The execute method gets called periodically on schedule.
 
-##Defining the Task Schedule
+## Defining the Task Schedule
 Create a file called **WEB-INF/schedule.xml**. Register the tasks there. Specify the interval in minutes using the **frequency** attribute.
 
 ``` xml
@@ -80,7 +80,7 @@ You can run a task at a specific time of day. For example, the following will ru
 </schedule>
 ```
 
-##Creating an EJB Task
+## Creating an EJB Task
 Create a stateless session bean that implements the ``com.mobiarch.pulsar.Task`` interface.
 
 ``` java
